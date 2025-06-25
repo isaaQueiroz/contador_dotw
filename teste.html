@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atualizar Foto com Memória</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    #fotoPreview {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Atualize sua foto</h2>
+
+  <!-- Imagem atual -->
+  <img id="fotoPreview" src="" alt="Sua foto">
+
+  <!-- Input de imagem -->
+  <br>
+  <input type="file" id="fileInput" accept="image/*">
+
+  <script>
+    const input = document.getElementById("fileInput");
+    const imagem = document.getElementById("fotoPreview");
+
+    // Carregar imagem salva no localStorage (se houver)
+    const imagemSalva = localStorage.getItem("minhaFoto");
+    if (imagemSalva) {
+      imagem.src = imagemSalva;
+    } else {
+      imagem.src = "https://via.placeholder.com/300x200?text=Foto+Atual";
+    }
+
+    input.addEventListener("change", () => {
+      const file = input.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const dataURL = e.target.result;
+          imagem.src = dataURL;
+          localStorage.setItem("minhaFoto", dataURL); // salvar no navegador
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Questrial&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Questrial', sans-serif;
+  background-color: #fcefdc;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/fundo_tela.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #D12D31;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itens-li a:nth-of-type(2) {
+  display: block;
+  padding: 10px;
+}
+
+.itens-li a:nth-of-type(6) {
+  position: relative;
+  right: 10px;
+}
+
+.icon-sobre{
+  margin-right: 8px;
+}
+
+.icon-cat{
+  margin-right: 5px;
+}
+.li {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+}
+.li h2{
+  color: white;
+}
+.li-menu {
+  height: 100%;
+  width: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  color: white;
+}
+
+.li-menu button {
+  background: none;
+  color: white;
+  border: none;
+}
+
+.bi-list {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.bi-x-lg {
+  font-weight: 1000;
+  font-size: 30px;
+}
+
+.container-hr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container-hr hr {
+  width: 80%;
+}
+
+hr {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  top: 20px;
+}
+
+.bi-people-fill,
+.bi-list-ol,
+.bi-person-circle,
+.bi-gear-wide-connected,
+.bi-door-open {
+  font-size: 30px;
+  font-weight: 1000;
+  position: relative;
+  right: 10px;
+  top: 3px;
+}
+
+.close{
+  color: white;
+  left: 2px;
+  position: relative;
+}
+.sidebar {
+  height: 95vh;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #D12D31;
+  overflow-x: hidden;
+  transition: 0.4s;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-bottom-right-radius: 8px;
+}
+
+.sidebar .close-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+   cursor: pointer;
+}
+
+.sidebar .close-btn i {
+  background-color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.sidebar hr {
+  width: 80%;
+  border: none;
+  border-top: 2px solid #e77b7b;
+  margin: 10px auto 30px auto; /* isso centraliza horizontalmente */
+}
+
+.itens-li {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+  width: 80%;
+  position: relative;
+  top: 30px;
+}
+
+.sidebar a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: background 0.3s;
+}
+
+
+.sidebar i {
+  font-size: 28px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 80vh;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.main-calendario {
+    height: 80%;
+    width: 100%;
+}
+.calendario {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); /* Sombra um pouco mais suave */
+    padding: 25px; /* Diminuído o padding interno */
+    width: 95%; /* Mantém a largura proporcional */
+    max-width: 890px; /* Diminuído para um calendário menor */
+    height: 100%;
+    max-height: 550px; /* Diminuído o limite de altura */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 20px;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegacao button {
+    background: none;
+    border: none;
+    color: #e44d26;
+    cursor: pointer;
+    font-size: 1.8em; /* Diminuído */
+    font-weight: 500;
+    padding: 10px 18px; /* Diminuído o padding dos botões */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navegacao button:hover {
+    background-color: #fcebeb;
+    transform: translateY(-2px);
+}
+
+.navegacao .mes {
+    color: #b10f2e;
+    font-size: 2.2em; /* Diminuído */
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.dias.semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 12px; /* Diminuído */
+}
+
+.dias.semana div {
+    text-align: center;
+    color: #e44d26;
+    font-size: 1.3em; /* Diminuído */
+    font-weight: bold;
+    padding: 8px 0; /* Diminuído */
+}
+
+.dias#diasContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px; /* Diminuído para menor espaçamento entre os dias */
+    flex-grow: 1;
+}
+
+.dias#diasContainer div {
+    text-align: center;
+    padding: 18px; /* Diminuído para dias menores */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-size: 1.2em; /* Diminuído */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dias#diasContainer div:hover {
+    background-color: #ffebeb;
+    transform: scale(1.02); /* Efeito de zoom um pouco menor */
+}
+
+.dias#diasContainer div.selecionado {
+    background-color: #e44d26;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra um pouco menor */
+}
+
+.dias#diasContainer div.dia-inativo {
+    color: #b0b0b0;
+    cursor: default;
+    background-color: #f9f9f9;
+}
+
+.dias#diasContainer div.dia-inativo:hover {
+    background-color: #f9f9f9;
+    transform: none;
+}
+
+#btnContinuar {
+    background-color: #e44d26;
+    color: white;
+    border: none;
+    padding: 12px 25px; /* Diminuído o padding */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em; /* Diminuído a fonte do botão */
+    margin-top: 30px; /* Diminuído o espaço acima do botão */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 45%; /* Diminuído a largura do botão */
+    max-width: 850px; /* Diminuído o limite de largura do botão */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra um pouco menor */
+    position: relative;
+    bottom: 20px;
+}
+
+#btnContinuar:hover {
+    background-color: #c83c1e;
+    transform: translateY(-1px); /* Efeito de elevação um pouco menor */
+}

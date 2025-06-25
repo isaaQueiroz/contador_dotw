@@ -1,0 +1,919 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Questrial&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Questrial', sans-serif;
+  background-color: #fcefdc;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/fundo_tela.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #D12D31;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itens-li a:nth-of-type(2) {
+  gap: 15px;
+}
+.itens-li a:nth-of-type(3){
+  position: relative;
+  left: 10px;
+}
+.itens-li a:nth-of-type(6), .itens-li a:nth-of-type(8) {
+  position: relative;
+  left: 10px;
+}
+
+.icon-sobre{
+  margin-right: 8px;
+}
+
+.icon-cat{
+  margin-right: 5px;
+}
+.li {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+}
+.li h2{
+  color: white;
+}
+.li-menu {
+  height: 100%;
+  width: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  color: white;
+}
+
+.li-menu button {
+  background: none;
+  color: white;
+  border: none;
+}
+
+.bi-list {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.bi-x-lg {
+  font-weight: 1000;
+  font-size: 30px;
+}
+
+.container-hr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container-hr hr {
+  width: 80%;
+}
+
+hr {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  top: 20px;
+}
+
+.bi-people-fill,
+.bi-list-ol,
+.bi-person-circle,
+.bi-gear-wide-connected,
+.bi-door-open {
+  font-size: 30px;
+  font-weight: 1000;
+  position: relative;
+  right: 10px;
+  top: 3px;
+}
+
+.close{
+  color: white;
+  left: 2px;
+  position: relative;
+}
+.sidebar {
+  height: 95vh;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #D12D31;
+  overflow-x: hidden;
+  transition: 0.4s;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-bottom-right-radius: 8px;
+}
+
+.sidebar .close-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+   cursor: pointer;
+}
+
+.sidebar .close-btn i {
+  background-color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.sidebar hr {
+  width: 80%;
+  border: none;
+  border-top: 2px solid #e77b7b;
+  margin: 10px auto 30px auto; /* isso centraliza horizontalmente */
+}
+
+.itens-li {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+  width: 80%;
+  position: relative;
+  top: 30px;
+}
+
+.sidebar a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: background 0.3s;
+}
+
+
+.sidebar i {
+  font-size: 28px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 80vh;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.pesquisar {
+  background-color: #FFFAEF;
+  width: 36%;
+  height: 55px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin: 20px auto;
+  gap: 10px;
+  position: relative;
+  bottom: 20px;
+}
+
+.pesquisar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 20px;
+  color: #999;
+  width: 100%;
+  font-family: inherit;
+}
+
+.pesquisar img {
+  width: 25px;
+  height: 25px;
+  opacity: 0.5;
+}
+
+.voltar img {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  left: 35px;
+  top: 20px;
+}
+
+.card {
+  background-color: #FFFAEF;
+  padding: 2rem;
+  border: 2px solid #D22E33;
+  border-radius: 10px;
+  text-align: center;
+  height: 35vh;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h2 {
+  color: #b10f2e;
+  font-size: 37px;
+  position: relative;
+  bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  bottom: 10px;
+  height: 55px;
+  width: auto;
+}
+
+.btn {
+  background-color: #D22E33;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  
+}
+
+.btn:hover {
+  background-color: #a71d2a;
+}
+
+.titulo h1 {
+  color: #B10F2E;
+  font-size: 45px;
+  text-align: center;
+  margin: 10vh 0 40px;
+  position: relative;
+  bottom: 25px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  background-color: #fff8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: collapse;
+  min-width: 580px;
+  min-height: 300px;
+  margin-bottom: 40px;
+}
+
+th, td {
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 20px;
+}
+
+th {
+  color: #D22E33;
+  font-weight: 600;
+  background-color: #fff8f0;
+}
+
+.conteudo {
+  gap: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.itens_cat{
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.btn-escolhas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  bottom: 25px;
+}
+
+.btn-add,
+.btn-rem {
+  background-color: #D22E33;
+  color: white;
+  border: none;
+  height: 60px;
+  width: 210px;
+  border-radius: 6px;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #FFFAEF;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: #b10f2e;
+  font-size: 33px;
+}
+
+.modal-content p {
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: black;
+}
+
+.input-modal {
+  margin-top: 30px;
+  border-radius: 8px;
+  height: 55px;
+  width: 460px;
+  background-color: transparent;
+  border: 3px solid #aaa;
+  font-size: 18px;
+  color: black;
+  padding-left: 8px;
+}
+
+.input-modal::placeholder {
+  color: #aaa;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 65px;
+}
+
+.btn-salvar,
+.btn-remover {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: #D22E33;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.btn-salvar:hover,
+.btn-remover:hover {
+  background-color: #a71d2a;
+}
+
+.closed{
+  color: white;
+  left: 100px;
+  top: 20px;
+  position: relative;
+}
+
+.dropdown{
+  margin-top: 30px;
+  border-radius: 8px;
+  height: 55px;
+  width: 460px;
+  background-color: transparent;
+  border: 3px solid #aaa;
+  font-size: 18px;
+  color: #3D3D3D;
+  padding-left: 8px;
+}
+
+.card-dados, .card-about {
+  background-color: #FFFAEF;
+  padding: 2rem;
+  border: 2px solid #D22E33;
+  border-radius: 10px;
+  text-align: center;
+  height: 43vh;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* já existente */
+  top: 5vh;
+}
+
+/* Estilo para a imagem de perfil */
+#fotoPerfil {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; /* deixa a imagem redonda */
+  object-fit: cover;  /* garante que a imagem preencha o círculo */
+  border: 3px solid #D12D31; /* borda vermelha para destacar */
+  box-shadow: 0 4px 10px rgba(209, 45, 49, 0.5); /* sombra suave */
+  display: block;
+  position: relative;
+  top: 150px; /* ajustei para facilitar posicionamento do botão */
+  right: 200px;
+}
+#fotoLogo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; /* deixa a imagem redonda */
+  object-fit: cover;  /* garante que a imagem preencha o círculo */
+  border: 3px solid #D12D31; /* borda vermelha para destacar */
+  box-shadow: 0 4px 10px rgba(209, 45, 49, 0.5); /* sombra suave */
+  display: block;
+  position: relative;
+  top: 140px; /* ajustei para facilitar posicionamento do botão */
+  right: 200px;
+}
+/* Container para a foto + botão, para centralizar juntos */
+.foto-perfil-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* espaço entre a imagem e o botão */
+  margin-top: 40px; /* espaçamento do topo */
+}
+
+.foto-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* espaço entre a imagem e o botão */
+  margin-top: 40px; /* espaçamento do topo */
+}
+
+/* Botão estilizado para escolher foto */
+.btn-escolher-foto {
+  background-color: #D12D31;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  position: relative;
+  top: 160px;
+  right: 200px;
+  font-size: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(209, 45, 49, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-escolher-foto:hover {
+  background-color: #a71d2a;
+  transform: scale(1.05);
+}
+
+.text-d {
+  text-align: justify;
+}
+
+.text-d h2{
+  color: #b10f2e;
+  font-size: 42px;
+  position: relative;
+  left: 120px;
+  bottom: 100px; 
+}
+
+.text-d h6{
+  font-size: 25px;
+  position: relative;
+  bottom: 120px;
+  left: 120px;
+  color: #40403F;
+}
+
+.text-d p {
+  font-size: 18px;
+  position: relative;
+  bottom: 180px;
+  left: 120px;  
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.text-d hr{
+  width: 280px;
+  background-color: #b10f2e;
+  height: 1px;
+  border-radius: 40px;
+  position: relative;
+  top: -230px;
+  left: 120px;
+}
+
+.voltar-p {
+  position: absolute;
+  bottom: 430px;      /* Ajuste a distância do topo */
+  left: -355px;     /* Ajuste a distância da esquerda */
+  /* Remova right e bottom, pois não são mais necessários */
+}
+
+.voltar-p img {
+  height: 50px;
+  width: 50px;
+}
+
+.cont_dados{
+  width: 100%;
+  height: 100%;
+}
+
+.cont_dados h2{
+  position: relative;
+  bottom: 100px;
+  font-size: 42px;
+  color: #B10F2E;
+  left: 70px;
+}
+
+.cont_dados h6{
+  position: relative;
+  bottom: 150px;
+  left: 55px;
+  font-size: 25px;
+  color: #40403F;
+}
+
+.cont_dados p{
+  width: 50%;
+  height: 50%;
+  text-align: justify;
+  position: relative;
+  left: 312px;
+  bottom: 180px;
+}
+.cont_dados hr{
+  width: 45%;
+  background-color: #b10f2e;
+  height: 1px;
+  border-radius: 40px;
+  position: relative;
+  top: -125px;
+  left: 125px;
+}
+
+@media (max-width: 768px) {
+  .li-menu {
+    width: 15%;
+    font-size: 35px;
+  }
+
+  .li h2 {
+    font-size: 20px;
+  }
+
+  .sidebar {
+    width: 0;
+    padding-top: 10px;
+    height: 100vh;
+  }
+
+  .card {
+    width: 90%;
+    height: 250px;
+    padding: 1.5rem 1rem;
+  }
+
+  .card h2 {
+    font-size: 35px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 18px;
+    padding: 0.7rem 1rem;
+  }
+
+  .pesquisar {
+    width: 80%;
+    height: 45px;
+    padding: 0 10px;
+  }
+
+  .pesquisar input {
+    font-size: 16px;
+  }
+
+  .pesquisar img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .titulo h1 {
+    font-size: 30px;
+    margin: 60px 0 25px;
+  }
+
+  table {
+    min-width: 100%;
+    font-size: 16px;
+  }
+
+  th, td {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+
+  .voltar img {
+    left: 10px;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .li-menu {
+    width: 20%;
+  }
+
+  .li h2 {
+    font-size: 18px;
+    position: relative;
+    right: 45px;
+  }
+
+  .bi-list {
+    font-size: 45px;
+  }
+
+  .card h2 {
+    font-size: 30px;
+    position: relative;
+    bottom: 60px;
+  }
+
+  .btn {
+    font-size: 20px;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 5px;
+  }
+
+  .btn-escolhas{
+    height: 60px;
+    gap: 10px;
+    width: 54vh;
+    
+  }
+  .btn-add, .btn-rem{
+    font-size: 20.5px;
+    text-align: center;
+    height: 65px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+
+  .modal-content {
+    height: auto;
+    position: relative;
+    width: 320px;
+    top: 140px;
+  }
+
+  .modal-content h2{
+    font-size: 35px;
+    position: relative;
+    top: 20px;
+  }
+  .input-modal{
+    width: 320px;
+    font-size: 20px;
+    position: relative; 
+    right: 8px;
+  }
+  .dropdown{
+    width: 320px;
+    font-size: 20px; 
+  }
+  .dropdown option {
+    font-size: 16px;       /* Tamanho da fonte nas opções */
+    padding: 8px;
+  }
+  .btn-remover, .btn-salvar{
+    width: 55%;
+    height: 55px;
+    font-size: 20px;
+  }
+  .pesquisar {
+    width: 88%;
+    height: 50px;
+    padding: 0 8px;
+  }
+
+  .pesquisar input {
+    font-size: 18px;
+  }
+
+  .pesquisar img{
+    width: 25px;
+    height: 25px;
+  }
+  .titulo h1 {
+    font-size: 42px;
+    position: relative;
+    bottom: 30px;
+  }
+  table{
+    min-width: auto;
+    width: 360px;
+  }
+  th, td {
+    font-size: 18px;
+    padding: 1rem;
+
+  }
+
+  .voltar img {
+    left: 20px;
+    top: 20px;
+    height: 35px;
+    width: 35px;
+  }
+ 
+  .card-dados{
+    height: auto;
+    max-height: 750px;
+    width: 80%;
+  }
+
+  .card-about{
+    height: auto;
+    max-height: 600px;
+    width: 80%;
+  }
+  .text-d h2{
+    font-size: 45px;
+    position: relative;
+    bottom: 315px;
+    left: 35px;
+  }
+
+  .cont_dados h2{
+    font-size: 45px;
+    position: relative;
+    bottom: 200px;
+    left: 5px;
+  }
+  .text-d h6{
+    font-size: 35px;
+    position: relative;
+    top: 10px;
+    left: -15px;
+  }
+  .cont_dados h6{
+    font-size: 35px;
+    position: relative;
+    bottom: 80px;
+    left: -40px;
+  }
+
+  .cont_dados hr{
+    background-color: #40403F;
+    width: 85%;
+    position: relative;
+    left: -30px;
+    top: 45px;
+  }
+  .cont_dados p{
+    font-size: 20px;
+    position: relative;
+    bottom: 120px;
+    left: -15px;
+    text-align: justify;
+    width: 110%;
+    height: 50%;
+  }
+  .text-d hr{
+    background-color: #40403F;
+    position: relative;
+    top: -60px;
+    left: -15px;
+  }
+
+  .text-d p{
+    font-size: 25px;
+    position: relative;
+    bottom: 40px;
+    left: -10px;
+  }
+  #fotoPerfil {
+    position: relative;
+    top: 80px;
+    left:  5px;
+    height: 180px;
+    width: 180px;
+  }
+
+  #fotoLogo {
+    position: relative;
+    top: 100px;
+    left:  5px;
+    height: 180px;
+    width: 180px;
+  }
+  .foto-perfil-container{
+    margin-top: 40px; /* espaçamento do topo */
+    
+  }
+  .btn-escolher-foto {
+    padding: 20px;
+    font-size: 20px;
+    position: relative;
+    top: 110px;
+    left: 5px;
+  }
+
+
+
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MENU.W</title>
+  <link rel="stylesheet" href="./css/stilo.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<style>
+  .main-calendario {
+    height: 80%;
+    width: 100%;
+}
+.calendario {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); /* Sombra um pouco mais suave */
+    padding: 25px; /* Diminuído o padding interno */
+    width: 95%; /* Mantém a largura proporcional */
+    max-width: 890px; /* Diminuído para um calendário menor */
+    height: 100%;
+    max-height: 550px; /* Diminuído o limite de altura */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 20px;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegacao button {
+    background: none;
+    border: none;
+    color: #e44d26;
+    cursor: pointer;
+    font-size: 1.8em; /* Diminuído */
+    font-weight: 500;
+    padding: 10px 18px; /* Diminuído o padding dos botões */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navegacao button:hover {
+    background-color: #fcebeb;
+    transform: translateY(-2px);
+}
+
+.navegacao .mes {
+    color: #b10f2e;
+    font-size: 2.2em; /* Diminuído */
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.dias.semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 12px; /* Diminuído */
+}
+
+.dias.semana div {
+    text-align: center;
+    color: #e44d26;
+    font-size: 1.3em; /* Diminuído */
+    font-weight: bold;
+    padding: 8px 0; /* Diminuído */
+}
+
+.dias#diasContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px; /* Diminuído para menor espaçamento entre os dias */
+    flex-grow: 1;
+}
+
+.dias#diasContainer div {
+    text-align: center;
+    padding: 18px; /* Diminuído para dias menores */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-size: 1.2em; /* Diminuído */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dias#diasContainer div:hover {
+    background-color: #ffebeb;
+    transform: scale(1.02); /* Efeito de zoom um pouco menor */
+}
+
+.dias#diasContainer div.selecionado {
+    background-color: #e44d26;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra um pouco menor */
+}
+
+.dias#diasContainer div.dia-inativo {
+    color: #b0b0b0;
+    cursor: default;
+    background-color: #f9f9f9;
+}
+
+.dias#diasContainer div.dia-inativo:hover {
+    background-color: #f9f9f9;
+    transform: none;
+}
+
+#btnContinuar {
+    background-color: #e44d26;
+    color: white;
+    border: none;
+    padding: 12px 25px; /* Diminuído o padding */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em; /* Diminuído a fonte do botão */
+    margin-top: 30px; /* Diminuído o espaço acima do botão */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 45%; /* Diminuído a largura do botão */
+    max-width: 850px; /* Diminuído o limite de largura do botão */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra um pouco menor */
+    position: relative;
+    bottom: 20px;
+}
+
+#btnContinuar:hover {
+    background-color: #c83c1e;
+    transform: translateY(-1px); /* Efeito de elevação um pouco menor */
+}
+</style>
+
+<body>
+    <header>
+        <nav>
+          <div class="li-menu">
+            <button class="menu-button" onclick="abrirMenu()" aria-label="Abrir menu lateral">
+              <i class="bi bi-list"></i>
+            </button>
+          </div>
+          <div class="li">
+            <h2 class="titulo">MENU.W</h2>
+          </div>
+        </nav>
+      </header>
+    
+      <div id="menuLateral" class="sidebar">
+        <div class="closed">
+          <i class="bi bi-x-lg" onclick="fecharMenu()"></i>
+        </div>
+        <hr>
+        <div class="itens-li">
+          <a href="inicio.html"><i class="bi bi-house-door-fill"></i>Home</a>
+          <a href="calendario.html"><i class="bi bi-calendar-event-fill"></i>Calendário</a>
+          <a href="categorias.html"><i class="bi bi-list-ol icon-cat"></i>Categorias</a>
+          <a href="contagens.html"><i class="bi bi-plus-slash-minus"></i>Contagens</a>
+          <a href="dados.html"><i class="bi bi-bar-chart-line-fill"></i>Dados</a>
+          <hr>
+          <a href="perfil.html"><i class="bi bi-person-circle"></i>Meu Perfil</a>
+          <a href="about.html"><i class="bi bi-info-circle icon-sobre"></i>Sobre Nós</a>
+          <a href="index.html"><i class="bi bi-door-open"></i>Sair</a>
+        </div>
+      </div>
+    
+
+    <main class="main-calendario flex flex-col items-center p-4">
+        <!-- <h1 class="titulo-calendario">Selecione a Data</h1> -->
+
+        <div class="calendario flex flex-col items-center shadow-lg rounded-xl max-w-5xl w-full mx-auto">
+            <div class="navegacao">
+                <button id="prevMonth" class="px-4 py-2 rounded-md transition-all duration-200 ease-in-out">Anterior</button>
+                <div class="mes text-2xl font-semibold text-red-700"></div>
+                <button id="nextMonth" class="px-4 py-2 rounded-md transition-all duration-200 ease-in-out">Próximo</button>
+            </div>
+
+            <div class="dias semana w-full mb-2">
+                <div class="text-center">Dom</div>
+                <div class="text-center">Seg</div>
+                <div class="text-center">Ter</div>
+                <div class="text-center">Qua</div>
+                <div class="text-center">Qui</div>
+                <div class="text-center">Sex</div>
+                <div class="text-center">Sáb</div>
+            </div>
+
+            <div class="dias w-full" id="diasContainer">
+                <!-- Os dias do calendário serão gerados aqui pelo JavaScript -->
+            </div>
+        </div>
+
+        <button id="btnContinuar" class="hidden">Continuar</button>
+    </main>
+
+    <script>
+        // Funções do seu menu lateral (exemplo, certifique-se de que o CSS e JS do menu estejam vinculados corretamente)
+        function abrirMenu() {
+            document.getElementById("menuLateral").style.width = "250px";
+        }
+
+        function fecharMenu() {
+            document.getElementById("menuLateral").style.width = "0";
+        }
+
+        // Lógica do calendário
+        const mesElement = document.querySelector('.mes');
+        const diasContainer = document.getElementById('diasContainer');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        const btnContinuar = document.getElementById('btnContinuar');
+
+        let dataAtual = new Date();
+        let diaSelecionado = null;
+
+        function renderizarCalendario() {
+            diasContainer.innerHTML = '';
+            const primeiroDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 1);
+            const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
+            const ultimoDiaDoMesAnterior = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 0);
+
+            const diaDaSemanaPrimeiroDia = primeiroDiaDoMes.getDay();
+
+            mesElement.textContent = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' }).format(dataAtual);
+
+            for (let i = diaDaSemanaPrimeiroDia - 1; i >= 0; i--) {
+                const diaAnterior = ultimoDiaDoMesAnterior.getDate() - i;
+                const divDia = document.createElement('div');
+                divDia.textContent = diaAnterior;
+                divDia.classList.add('dia-inativo');
+                diasContainer.appendChild(divDia);
+            }
+
+            for (let i = 1; i <= ultimoDiaDoMes.getDate(); i++) {
+                const divDia = document.createElement('div');
+                divDia.textContent = i;
+                divDia.dataset.dia = i;
+                divDia.dataset.mes = dataAtual.getMonth() + 1;
+                divDia.dataset.ano = dataAtual.getFullYear();
+
+                if (diaSelecionado &&
+                    i === diaSelecionado.getDate() &&
+                    dataAtual.getMonth() === diaSelecionado.getMonth() &&
+                    dataAtual.getFullYear() === dataAtual.getFullYear()) {
+                    divDia.classList.add('selecionado');
+                }
+
+                divDia.addEventListener('click', function() {
+                    const diaAtualmenteSelecionado = document.querySelector('.dias div.selecionado');
+                    if (diaAtualmenteSelecionado) {
+                        diaAtualmenteSelecionado.classList.remove('selecionado');
+                    }
+
+                    this.classList.add('selecionado');
+
+                    diaSelecionado = new Date(
+                        parseInt(this.dataset.ano),
+                        parseInt(this.dataset.mes) - 1,
+                        parseInt(this.dataset.dia)
+                    );
+
+                    btnContinuar.classList.remove('hidden');
+                });
+                diasContainer.appendChild(divDia);
+            }
+
+            const totalDiasExibidos = diaDaSemanaPrimeiroDia + ultimoDiaDoMes.getDate();
+            const diasParaCompletar = 42 - totalDiasExibidos;
+            for (let i = 1; i <= diasParaCompletar; i++) {
+                const divDia = document.createElement('div');
+                divDia.textContent = i;
+                divDia.classList.add('dia-inativo');
+                diasContainer.appendChild(divDia);
+            }
+
+            if (!diaSelecionado) {
+                btnContinuar.classList.add('hidden');
+            }
+        }
+
+        prevMonthBtn.addEventListener('click', () => {
+            dataAtual.setMonth(dataAtual.getMonth() - 1);
+            renderizarCalendario();
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            dataAtual.setMonth(dataAtual.getMonth() + 1);
+            renderizarCalendario();
+        });
+
+        btnContinuar.addEventListener('click', () => {
+            if (diaSelecionado) {
+                // Aqui você pode integrar com a sua lógica de navegação ou salvar a data
+                alert('Você selecionou a data: ' + diaSelecionado.toLocaleDateString('pt-BR'));
+            } else {
+                alert('Por favor, selecione um dia.');
+            }
+        });
+
+        renderizarCalendario();
+    </script>
+</body>
+
+</html>
+
